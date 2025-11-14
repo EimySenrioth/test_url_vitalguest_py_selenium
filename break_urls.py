@@ -17,8 +17,20 @@ driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 driver.maximize_window()
 
 try:
-
     # LOGIN
+    driver.get(f"{base}/login")
+    time.sleep(1)
+    driver.find_element(By.NAME, "email").send_keys(usuario)
+    driver.find_element(By.NAME, "password").send_keys(password)
+    # Buscar el botón por texto visible 'Iniciar Sesión'
+    botones = driver.find_elements(By.TAG_NAME, "button")
+    for boton in botones:
+        if boton.text.strip().lower() == "iniciar sesión":
+            boton.click()
+            break
+    else:
+        raise Exception("Botón 'Iniciar Sesión' no encontrado")
+    time.sleep(2)
     # 1. Añadir / al final
     driver.get(f"{base}/dashboard/delegations/")
     time.sleep(1)
