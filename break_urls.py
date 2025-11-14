@@ -37,34 +37,31 @@ try:
     time.sleep(1)
     print("8) query param raro, url:", driver.current_url)
     print("8) Título:", driver.title)
-    with open(os.path.join(result_dir, "resultado_8.html"), "w", encoding="utf-8") as f:
+    with open(os.path.join(result_dir, "resultado_Query.html"), "w", encoding="utf-8") as f:
         f.write(driver.page_source)
-    with open(os.path.join(result_dir, "resultado_8.txt"), "w", encoding="utf-8") as f:
+    with open(os.path.join(result_dir, "resultado_Query.txt"), "w", encoding="utf-8") as f:
         f.write(driver.find_element(By.TAG_NAME, "body").text)
-    driver.save_screenshot(os.path.join(result_dir, "resultado_8.png"))
-
+    driver.save_screenshot(os.path.join(result_dir, "resultado_Query.png"))
     # 2. Mayúsculas en ruta
     driver.get(f"{base}/dashboard/DELEGATIONS")
     time.sleep(1)
     print("10) mayúsculas en ruta, url:", driver.current_url)
     print("10) Título:", driver.title)
-    with open(os.path.join(result_dir, "resultado_10.html"), "w", encoding="utf-8") as f:
+    with open(os.path.join(result_dir, "resultado_Mayusculas.html"), "w", encoding="utf-8") as f:
         f.write(driver.page_source)
-    with open(os.path.join(result_dir, "resultado_10.txt"), "w", encoding="utf-8") as f:
+    with open(os.path.join(result_dir, "resultado_Mayusculas.txt"), "w", encoding="utf-8") as f:
         f.write(driver.find_element(By.TAG_NAME, "body").text)
-    driver.save_screenshot(os.path.join(result_dir, "resultado_10.png"))
-
+    driver.save_screenshot(os.path.join(result_dir, "resultado_Mayusculas.png"))
     # 3. Punto y coma en ruta
     driver.get(f"{base}/dashboard/delegations;")
     time.sleep(1)
     print("11) punto y coma en ruta, url:", driver.current_url)
     print("11) Título:", driver.title)
-    with open(os.path.join(result_dir, "resultado_11.html"), "w", encoding="utf-8") as f:
+    with open(os.path.join(result_dir, "resultado_punto_coma.html"), "w", encoding="utf-8") as f:
         f.write(driver.page_source)
-    with open(os.path.join(result_dir, "resultado_11.txt"), "w", encoding="utf-8") as f:
+    with open(os.path.join(result_dir, "resultado_punto_coma.txt"), "w", encoding="utf-8") as f:
         f.write(driver.find_element(By.TAG_NAME, "body").text)
-    driver.save_screenshot(os.path.join(result_dir, "resultado_11.png"))
-
+    driver.save_screenshot(os.path.join(result_dir, "resultado_punto_coma.png"))
 
 
 finally:
